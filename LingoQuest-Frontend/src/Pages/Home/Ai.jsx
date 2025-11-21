@@ -1,8 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import ai from "../../assets/Icons/mingcute_ai-line.svg";
 import user from "../../assets/Icons/user.svg"
 
 export default function Ai() {
+  const navigate = useNavigate();
+
+  const handleTryDemo = () => {
+    // Navigate to the Lingo AI demo page
+    navigate('/lingo-ai-demo');
+  };
+
   return (
     <section className="bg-[#EFEDE9] py-20">
       <div className="max-w-7xl mx-auto px-4">
@@ -16,7 +24,7 @@ export default function Ai() {
           </p>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
           {/* Chat Demo Section */}
           <div className="max-w-lg w-full">
             <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-8">
@@ -70,8 +78,78 @@ export default function Ai() {
 
               {/* Demo Button */}
               <div className="text-center mt-8">
-                <button className="bg-[#FFBC42] text-[#8F2D56] font-semibold py-4 px-6 rounded-full shadow-lg hover:bg-[#8F2D56] hover:text-white transition-all duration-300 transform hover:scale-105 w-full max-w-xs">
+                <button 
+                  onClick={handleTryDemo}
+                  className="bg-[#FFBC42] text-[#8F2D56] font-semibold py-4 px-6 rounded-full shadow-lg hover:bg-[#8F2D56] hover:text-white transition-all duration-300 transform hover:scale-105 w-full max-w-xs"
+                >
                   Try Demo Chat
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Section */}
+          <div className="max-w-md w-full">
+            <div className="space-y-6">
+              <div className="text-center lg:text-left">
+                
+                <p className="text-gray-600 mb-6">
+                  
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
+                  <div className="w-8 h-8 bg-[#E3F6F8] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#218381] text-sm">💬</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#8F2D56]">Real Conversations</h3>
+                    <p className="text-gray-600 text-sm">Practice natural dialogues with instant feedback</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
+                  <div className="w-8 h-8 bg-[#E3F6F8] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#218381] text-sm">🔊</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#8F2D56]">Voice Responses</h3>
+                    <p className="text-gray-600 text-sm">Hear proper pronunciation with text-to-speech</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
+                  <div className="w-8 h-8 bg-[#E3F6F8] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#218381] text-sm">🌍</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#8F2D56]">Multiple Languages</h3>
+                    <p className="text-gray-600 text-sm">Learn English, Spanish, French, German & more</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
+                  <div className="w-8 h-8 bg-[#E3F6F8] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#218381] text-sm">📊</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#8F2D56]">Personalized Learning</h3>
+                    <p className="text-gray-600 text-sm">Adapts to your proficiency level and goals</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional CTA */}
+              <div className="text-center lg:text-left mt-8">
+                <p className="text-gray-600 text-sm mb-4">
+                  Ready to transform your language learning journey?
+                </p>
+                <button 
+                  onClick={() => navigate('/signup')}
+                  className="bg-[#8F2D56] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-[#FFBC42] hover:text-[#8F2D56] transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started For Free
                 </button>
               </div>
             </div>
