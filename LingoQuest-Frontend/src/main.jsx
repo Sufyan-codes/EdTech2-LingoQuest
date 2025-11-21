@@ -17,6 +17,7 @@ import Onboarding1 from "./Pages/Onboarding/Onboarding1";
 import Onboarding2 from "./Pages/Onboarding/Onboarding2";
 import Onboarding3 from "./Pages/Onboarding/Onboarding3";
 import Dashboard from "./Pages/Dashboard.jsx/Dashboard";
+import LingoAIDemo from "./Pages/LingoAIDemo"; // Import the new Lingo AI component
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
       <Route path="/onboarding2" element={<Onboarding2 />} />
       <Route path="/onboarding3" element={<Onboarding3 />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/lingo-ai-demo" element={<LingoAIDemo />} /> {/* New Lingo AI route */}
     </>
   )
 );
