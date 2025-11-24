@@ -7,8 +7,11 @@ import Languages from "../Pages/Home/Languages";
 import Ai from "../Pages/Home/Ai";
 import CTA from "../Pages/Home/CTA";
 import Footer from "./Footer";
+import BecomeATutor from "../Pages/Home/BecomeATutor";
+
 
 export default function Layout() {
+ 
   return (
     <>
       <Navbar />
@@ -17,8 +20,10 @@ export default function Layout() {
       <HowItWOrks />
       <Languages />
       <Ai />
+      <BecomeATutor />
       <CTA />
       <Footer />
+
     </>
   );
 }

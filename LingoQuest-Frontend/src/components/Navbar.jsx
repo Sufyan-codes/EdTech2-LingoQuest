@@ -11,7 +11,7 @@ export default function Navbar() {
 }
     
     return (
-        <nav className="fixed top-0 bg-[#EFFAFB] left-0 right-0 z-50 m2">
+        <nav className="fixed top-0 bg-[#FFF7E6] left-0 right-0 z-50 m2">
             <div className="text-neutral-500
             max-w-7xl mx-auto px-4 py-3 flex justify-between items-center
             ">
@@ -41,7 +41,7 @@ export default function Navbar() {
                     py-2 px-4 rounded-lg hover:bg-neutral-100 transition">
                         Login
                     </Link>
-                    <Link to='/signup' className="bg-[#FFBC42] text-[#8F2D56]
+                    <Link to='/signup' className="bg-[#FF6B6B] text-white
                     py-2 px-4 rounded-lg hover:bg-[#8F2D56]-500 transition">
                         Start Learning
                     </Link>
@@ -79,7 +79,7 @@ export default function Navbar() {
                     py-2 px-4 rounded-lg hover:bg-neutral-700 transition">
                         Get a Demo
                     </a>
-                    <a href="#" className="bg-[#FFBC42] text-[#8F2D56]
+                    <a href="#" className="bg-[#http://localhost:5173/] text-[#8F2D56]
                     py-2 px-4 rounded-lg hover:bg-blue-500 transition">
                         Start Free Trial
                     </a>

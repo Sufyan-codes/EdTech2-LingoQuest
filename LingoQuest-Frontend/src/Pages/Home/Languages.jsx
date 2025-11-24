@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 
 export default function Languages() {
   return (
-    <section className="bg-[#EFFAFB] py-20 lg:py-24">
+    <section className="bg-[#FFF7E6] py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <div className="max-w-2xl mx-auto mb-12 lg:mb-16">
-          <h1 className="lg:text-4xl text-3xl font-bold text-[#8F2D56] mb-4">
+          <h1 className="lg:text-4xl text-3xl font-bold text-[#1A535C] mb-4">
             Featured Languages
           </h1>
-          <p className="lg:text-xl text-lg text-gray-600 leading-relaxed">
+          <p className="lg:text-xl text-lg text-[#64646B] leading-relaxed">
             Start learning the language you've always wanted to master
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function Languages() {
                   className="w-8 h-8"
                 />
               </div>
-              <p className="text-[#8F2D56] font-semibold text-lg">French</p>
+              <p className="text-[#1A535C] font-semibold text-lg">French</p>
             </div>
           </Link>
 
@@ -47,7 +47,7 @@ export default function Languages() {
                   className="w-8 h-8"
                 />
               </div>
-              <p className="text-[#8F2D56] font-semibold text-lg">Spanish</p>
+              <p className="text-[#1A535C] font-semibold text-lg">Spanish</p>
             </div>
           </Link>
 
@@ -63,7 +63,7 @@ export default function Languages() {
                   className="w-8 h-8"
                 />
               </div>
-              <p className="text-[#8F2D56] font-semibold text-lg">Chinese</p>
+              <p className="text-[#1A535C] font-semibold text-lg">Chinese</p>
             </div>
           </Link>
 
@@ -79,7 +79,7 @@ export default function Languages() {
                   className="w-8 h-8"
                 />
               </div>
-              <p className="text-[#8F2D56] font-semibold text-lg">Yoruba</p>
+              <p className="text-[#1A535C] font-semibold text-lg">Yoruba</p>
             </div>
           </Link>
         </div>
@@ -87,7 +87,7 @@ export default function Languages() {
         <div className="mt-12">
           <Link 
             to="/languages" 
-            className="inline-flex items-center justify-center border-2 border-[#218380] text-[#218380] font-semibold py-3 px-8 rounded-lg hover:bg-[#218380] hover:text-white transition-all duration-300"
+            className="inline-flex items-center justify-center border-2 border-[#1A535C] text-[#1A535C] font-semibold py-3 px-8 rounded-lg hover:bg-[#218380] hover:text-white transition-all duration-300"
           >
             Explore All Languages
           </Link>

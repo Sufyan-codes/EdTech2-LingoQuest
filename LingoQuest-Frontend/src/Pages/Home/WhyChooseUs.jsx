@@ -6,13 +6,13 @@ import chat from "../../assets/Icons/ph_chat-bold.svg";
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-[#EFFAFB] py-20 lg:py-24">
+    <section className="bg-[#FFF7E6] py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <div className="max-w-2xl mx-auto mb-12 lg:mb-16">
-          <h1 className="lg:text-4xl text-3xl font-bold text-[#8F2D56] mb-4">
+          <h1 className="lg:text-4xl text-3xl font-bold text-[#1A535C] mb-4">
             Why Choose LingoQuest?
           </h1>
-          <p className="lg:text-xl text-lg text-gray-600 leading-relaxed">
+          <p className="lg:text-xl text-lg text-[#64646B] leading-relaxed">
             Everything you need to master a new language, all in one place.
           </p>
         </div>

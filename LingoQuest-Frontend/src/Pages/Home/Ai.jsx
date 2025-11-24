@@ -12,14 +12,14 @@ export default function Ai() {
   };
 
   return (
-    <section className="bg-[#EFEDE9] py-20">
+    <section className="bg-[#FCE9DA] py-20">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl lg:text-4xl font-bold text-[#8F2D56] mb-6">
+          <h1 className="text-3xl lg:text-4xl font-bold text-[#1A535C] mb-6">
             Meet Lingo AI - Your 24/7 Language Companion
           </h1>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-[#64646B] max-w-3xl mx-auto leading-relaxed">
             Ask questions, practice conversations, and get instant feedback anytime
           </p>
         </div>

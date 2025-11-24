@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function CTA() {
   return (
-    <section className='bg-gradient-to-r from-[#DE145D] via-[#DE145D] to-[#3B0F22] py-16 lg:py-20'>
+    <section className='bg-gradient-to-r from-[#FFB66B] via-[#F06A6A] to-[#F06A6A] py-16 lg:py-20'>
       <div className='max-w-4xl mx-auto px-4 text-center text-white'>
         <div className='grid gap-6'>
           <h1 className='lg:text-4xl text-3xl font-bold leading-tight'>
