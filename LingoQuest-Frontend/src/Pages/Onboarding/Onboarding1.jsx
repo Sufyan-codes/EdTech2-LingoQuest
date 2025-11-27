@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { updateUserProfile } from "../../services/user";
 import { useOnboarding } from "../../context/OnboardingContext";
 import career from "../../assets/Icons/onboarding/Suitcase.svg";
 import student from "../../assets/Icons/onboarding/Student.svg";
@@ -25,15 +26,15 @@ export default function Onboarding1() {
   };
 
   return (
-    <section className="bg-[#FFF8E7] min-h-screen flex items-center justify-center">
+    <section className="bg-gradient-to-r from-[#DFF5F7] via-[#DFF5F7] to-[#F0F7F0] min-h-screen flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 w-full">
         <div className="mb-12">
           <div className="flex justify-between mb-3 text-[#1A535C] font-medium">
             <p>Step 1 of 3</p>
             <p>33%</p>
           </div>
-          <div className="bg-[#4ECDC4] rounded-full h-3">
-            <div className="bg-[#FF6B6B] h-3 rounded-full rounded-r" style={{ width: '33%' }} />
+          <div className="bg-[#FFBC42] rounded-full h-3">
+            <div className="bg-[#2EA148] h-3 rounded-full rounded-r" style={{ width: '33%' }} />
           </div>
         </div>
 
@@ -73,7 +74,7 @@ export default function Onboarding1() {
             onClick={handleContinue}
             disabled={!selectedGoal}
             className={`px-8 py-4 font-semibold rounded-lg ${
-              selectedGoal ? "bg-[#FFB0A8] text-white" : "bg-gray-400 text-gray-200 cursor-not-allowed"
+              selectedGoal ? "bg-[#2EA148] text-white" : "bg-gray-400 text-white cursor-not-allowed"
             }`}
           >
             Continue

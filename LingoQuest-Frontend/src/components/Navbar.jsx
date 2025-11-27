@@ -11,7 +11,7 @@ export default function Navbar() {
 }
     
     return (
-        <nav className="fixed top-0 bg-[#FFF7E6] left-0 right-0 z-50 m2">
+        <nav className="fixed top-0 bg-[#EFFAFB] border-[#7473DE] border-b left-0 right-0 z-50 m2">
             <div className="text-neutral-500
             max-w-7xl mx-auto px-4 py-3 flex justify-between items-center
             ">
@@ -19,7 +19,7 @@ export default function Navbar() {
                 <a href="#"><img src={logo} alt="logo" width={120} height={24} /></a>
 
                 {/* center Links */}
-                <div className="hidden md:flex space-x-6 text-[#8F2D56] font-medium">
+                <div className="hidden md:flex space-x-6 text-[#1A2634] font-medium">
                     <a href="#courses" className="hover:text-neutral-200">
                         Courses
                     </a>
@@ -37,11 +37,11 @@ export default function Navbar() {
                 {/* right btns */}
                 <div className="hidden md:flex space-x-4 items-center">
                     
-                    <Link to='/login' className="border border-[#218380] text-[#218380]
+                    <Link to='/login' className="border border-[#2EA148] text-[#2EA148]
                     py-2 px-4 rounded-lg hover:bg-neutral-100 transition">
                         Login
                     </Link>
-                    <Link to='/signup' className="bg-[#FF6B6B] text-white
+                    <Link to='/signup' className="bg-[#2EA148] text-white
                     py-2 px-4 rounded-lg hover:bg-[#8F2D56]-500 transition">
                         Start Learning
                     </Link>

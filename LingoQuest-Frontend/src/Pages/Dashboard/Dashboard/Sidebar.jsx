@@ -51,7 +51,7 @@ export default function Sidebar() {
               <span>Lessons</span>
              
           </Link>
-          <Link to='/quiz'
+          <Link to='/lessons/:lessonId/quiz'
               
               className={`flex items-center gap-2 py-3 px-4 rounded-xl text-left font-semibold transition-colors 
                
@@ -86,7 +86,13 @@ export default function Sidebar() {
             <img src={user} />  
             <span>Profile</span>
              
-            </Link>
+          </Link>
+          
+  <Link to='/tutor' className="flex items-center gap-2 py-3 px-4 rounded-xl font-semibold text-gray-700 hover:bg-gray-100">
+    <img src={user} />
+    <span>Tutor Dashboard</span>
+  </Link>
+
           
         </nav>
       </div>

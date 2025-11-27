@@ -1,16 +1,16 @@
 import React from "react";
-import french from "../../assets/Icons/fxemoji_franceflag.svg";
-import spain from "../../assets/Icons/fxemoji_spanishflag.svg";
-import chinese from "../../assets/Icons/fxemoji_chineseflag.svg";
-import nigeria from "../../assets/Icons/twemoji_flag-nigeria.svg";
+import french from "../../assets/Icons/FR.svg";
+import spain from "../../assets/Icons/ES.svg";
+import chinese from "../../assets/Icons/CN.svg";
+import nigeria from "../../assets/Icons/NG.svg";
 import { Link } from "react-router-dom";
 
 export default function Languages() {
   return (
-    <section className="bg-[#FFF7E6] py-20 lg:py-24">
+    <section className="bg-gradient-to-b from-[#EFFAFB] via-[#C1D0D2] to-[#C1D0D2] py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <div className="max-w-2xl mx-auto mb-12 lg:mb-16">
-          <h1 className="lg:text-4xl text-3xl font-bold text-[#1A535C] mb-4">
+          <h1 className="lg:text-4xl text-3xl font-bold text-[#1A2634] mb-4">
             Featured Languages
           </h1>
           <p className="lg:text-xl text-lg text-[#64646B] leading-relaxed">

@@ -1,101 +1,113 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOnboarding } from "../../context/OnboardingContext";
 
+// Import all flag assets
+import FR from "../../assets/icons/FR.svg";
+import ES from "../../assets/icons/ES.svg";
+import CN from "../../assets/icons/CN.svg";
+import NG from "../../assets/icons/NG.svg";
+
 export default function ChooseLanguage() {
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const { setLanguage } = useOnboarding();
+  const [selected, setSelected] = useState(null);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  // Language List
   const languages = [
-    { code: "FR", name: "French", country: "France" },
-    { code: "SA", name: "Arabic", country: "Saudi Arabia" },
-    { code: "PT", name: "Portuguese", country: "Portugal" },
-    { code: "ES", name: "Spanish", country: "Spain" },
-    { code: "DE", name: "German", country: "Germany" },
-    { code: "KE", name: "Swahili", country: "Kenya" },
-    { code: "CN", name: "Chinese", country: "China" },
-    { code: "JP", name: "Japanese", country: "Japan" },
-    { code: "KR", name: "Korean", country: "Korea" },
-    { code: "NG", name: "Yoruba", country: "Nigeria" },
-    { code: "IT", name: "Italian", country: "Italy" },
-    { code: "HA", name: "Hausa", country: "Nigeria" }
+    { code: "French", name: "French", flag: FR },
+    { code: "Spanish", name: "Spanish", flag: ES },
+    { code: "Chinese", name: "Chinese", flag: CN },
+    { code: "Yoruba", name: "Yoruba", flag: NG },
   ];
 
-  const filteredLanguages = languages.filter(language =>
-    language.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    language.code.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Filter search results
+  const filteredLanguages = useMemo(() => {
+    return languages.filter((lang) =>
+      lang.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search]);
 
-  const handleSelect = (language) => {
-    setSelectedLanguage(language);
-  };
+  const handleContinue = async () => {
+    if (!selected) return;
+    setLoading(true);
 
-  const handleContinue = () => {
-    if (!selectedLanguage) return;
-    setLanguage(selectedLanguage);               // save to context (and localStorage)
-    navigate("/onboarding1");                    // go to step 1
+    // Save to onboarding context
+    setLanguage(selected);
+
+    setLoading(false);
+    navigate("/onboarding1");
   };
 
   return (
-    <section className="bg-[#FFF8E7] min-h-screen">
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-[#1A535C] lg:text-4xl md:text-3xl text-2xl font-bold mb-4">
-            Choose Your Language
-          </h1>
-          <p className="text-[#699EA1] text-lg mb-6 max-w-2xl mx-auto">
-            Select the language you want to master. You can always add more languages later.
-          </p>
+    <section className="min-h-screen bg-gradient-to-b from-[#DFF3F1] to-[#F6FDFB] flex justify-center py-14 px-6">
+      <div className="w-full max-w-6xl">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#0E4E49] text-center">
+          Choose Your Language
+        </h1>
 
-          <div className="max-w-md mx-auto mb-8">
+        <p className="text-[#5F7D78] text-center text-lg mt-3">
+          Select the language you want to master. You can always add more languages later!
+        </p>
+
+        {/* Search Bar */}
+        <div className="flex justify-center mt-8">
+          <div className="w-full max-w-2xl">
             <input
               type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full border border-[#BDDBD9] bg-transparent text-[#1A535C] px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-[#FFBC42] placeholder-[#1A535C]"
-              placeholder="Search languages..."
+              placeholder="🔍 Search languages"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 shadow-sm focus:ring-2 focus:ring-[#2EA148] focus:outline-none"
             />
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mb-12">
-          {filteredLanguages.map((language, index) => (
+        {/* Languages Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-10">
+          {filteredLanguages.map((lang) => (
             <button
-              key={`${language.code}-${language.name}-${index}`}
-              type="button"
-              onClick={() => handleSelect(language)}
-              className={`w-full bg-white flex flex-col items-center justify-center p-6 rounded-xl text-[#1A535C] transition-all duration-300 ${
-                selectedLanguage?.code === language.code
-                  ? "ring-4 ring-[#FFBC42] transform scale-105"
-                  : "hover:shadow-lg hover:scale-105"
-              }`}
+              key={lang.code}
+              onClick={() => setSelected(lang)}
+              className={`
+                bg-white rounded-xl p-6 shadow-sm border 
+                flex flex-col items-center gap-4 transition-all
+                hover:shadow-md
+                ${
+                  selected?.code === lang.code
+                    ? "border-[#2EA148] ring-2 ring-[#2EA148]"
+                    : "border-gray-200"
+                }
+              `}
             >
-              <p className="text-2xl font-bold mb-2">{language.code}</p>
-              <span className="text-lg font-medium text-center">{language.name}</span>
+              <img src={lang.flag} alt={lang.name} className="w-14 h-14 object-contain" />
+              <p className="text-lg font-semibold text-[#0E4E49]">{lang.name}</p>
             </button>
           ))}
         </div>
 
-        <div className="text-center">
+        {/* Continue Button */}
+        <div className="flex justify-end mt-12">
           <button
             onClick={handleContinue}
-            disabled={!selectedLanguage}
-            className={`inline-block px-8 py-4 font-semibold rounded-lg transition-all duration-300 ${
-              selectedLanguage
-                ? "bg-[#FF6B6B] text-white hover:bg-[#ffa90d] hover:shadow-lg transform hover:scale-105"
-                : "bg-gray-400 text-gray-200 cursor-not-allowed"
-            }`}
+            disabled={!selected || loading}
+            className={`px-8 py-3 rounded-md text-white font-semibold text-lg shadow-md
+              transition-all 
+              ${
+                selected
+                  ? "bg-[#2EA148] hover:bg-[#27913F]"
+                  : "bg-gray-400 cursor-not-allowed"
+              }
+            `}
           >
-            Continue
+            {loading ? (
+              <span className="inline-block animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
+            ) : (
+              "Next"
+            )}
           </button>
-
-          {selectedLanguage && (
-            <p className="text-[#1A535C] mt-4 text-sm">
-              Selected: <span className="font-semibold">{selectedLanguage.name}</span>
-            </p>
-          )}
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
 import React from "react";
-import french from "../../assets/Icons/fxemoji_franceflag.svg";
-import spain from "../../assets/Icons/fxemoji_spanishflag.svg";
-import chinese from "../../assets/Icons/fxemoji_chineseflag.svg";
-import nigeria from "../../assets/Icons/twemoji_flag-nigeria.svg";
+import french from "../../assets/Icons/FR.svg";
+import spain from "../../assets/Icons/ES.svg";
+import chinese from "../../assets/Icons/CN.svg";
+import nigeria from "../../assets/Icons/NG.svg";
 import { Link } from "react-router-dom";
 
 export default function BecomeATutor() {

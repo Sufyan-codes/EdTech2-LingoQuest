@@ -12,11 +12,11 @@ export default function Ai() {
   };
 
   return (
-    <section className="bg-[#FCE9DA] py-20">
+    <section className="bg-[#FFFDF7] py-20">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl lg:text-4xl font-bold text-[#1A535C] mb-6">
+          <h1 className="text-3xl lg:text-4xl font-bold text-[#1A2634] mb-6">
             Meet Lingo AI - Your 24/7 Language Companion
           </h1>
           <p className="text-lg lg:text-xl text-[#64646B] max-w-3xl mx-auto leading-relaxed">
@@ -38,7 +38,7 @@ export default function Ai() {
                   />
                 </div>
                 <div className="bg-[#E3F6F8] rounded-2xl px-4 py-3 flex-1">
-                  <p className="text-[#8F2D56] text-sm lg:text-base">
+                  <p className="text-[#1A2634] text-sm lg:text-base">
                     Hi, I'm Lingo AI. Ready to practice your French?
                   </p>
                 </div>
@@ -80,7 +80,7 @@ export default function Ai() {
               <div className="text-center mt-8">
                 <button 
                   onClick={handleTryDemo}
-                  className="bg-[#FFBC42] text-[#8F2D56] font-semibold py-4 px-6 rounded-full shadow-lg hover:bg-[#8F2D56] hover:text-white transition-all duration-300 transform hover:scale-105 w-full max-w-xs"
+                  className="bg-[#2EA148] text-white font-semibold py-4 px-6 rounded-full shadow-lg  transition-all duration-300 transform hover:scale-105 w-full max-w-xs"
                 >
                   Try Demo Chat
                 </button>

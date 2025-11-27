@@ -11,7 +11,6 @@ import BecomeATutor from "../Pages/Home/BecomeATutor";
 
 
 export default function Layout() {
- 
   return (
     <>
       <Navbar />
@@ -23,7 +22,6 @@ export default function Layout() {
       <BecomeATutor />
       <CTA />
       <Footer />
-
     </>
   );
 }

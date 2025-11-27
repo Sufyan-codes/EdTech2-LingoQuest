@@ -1,48 +1,78 @@
-import { createContext, useContext, useState } from "react";
+// src/context/AuthContext.jsx
+import React, { createContext, useState, useContext, useEffect } from "react";
+import { loginApi, signupApi } from "../services/authService";
+import axios from "axios";
 
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
-  const [user, setUser] = useState(
-    localStorage.getItem("token") ? { email: "mock" } : null
-  );
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // SIGNUP
-  const signup = async ({ fullName, email, password }) => {
-    // mock delay
-    await new Promise((r) => setTimeout(r, 500));
+  // Load user + token on refresh
+  useEffect(() => {
+    try {
+      const token = localStorage.getItem("token");
+      const savedUser = localStorage.getItem("user");
 
-    // SUCCESS
-    localStorage.setItem("token", "demo-token");
-    setUser({ fullName, email });
+      if (token) {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      }
 
-    return { success: true };
+      if (token && savedUser) {
+        setUser(JSON.parse(savedUser));
+      }
+    } catch (error) {
+      console.error("Error restoring user:", error);
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  const login = async (email, password) => {
+    const data = await loginApi(email, password);
+
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data));
+
+    axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+    setUser(data);
+
+    return data;
   };
 
-  // LOGIN
-  const login = async ({ email, password }, rememberMe) => {
-    await new Promise((r) => setTimeout(r, 500));
+  const signup = async (userData) => {
+    const data = await signupApi(userData);
 
-    if (rememberMe) {
-      localStorage.setItem("token", "demo-token");
-    }
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data));
 
-    setUser({ email });
-    return { success: true };
+    axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+    setUser(data);
+
+    return data;
   };
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    delete axios.defaults.headers.common["Authorization"];
     setUser(null);
   };
 
+  const updateUser = (updates) => {
+    const updated = { ...user, ...updates };
+    setUser(updated);
+    localStorage.setItem("user", JSON.stringify(updated));
+  };
+
   return (
-    <AuthContext.Provider value={{ user, signup, login, logout }}>
+    <AuthContext.Provider value={{ user, login, signup, logout, updateUser, loading }}>
       {children}
     </AuthContext.Provider>
   );
-}
+};
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
+export const useAuth = () => useContext(AuthContext);

@@ -20,15 +20,15 @@ export default function Onboarding2() {
   };
 
   return (
-    <section className="bg-[#FFF8E7] min-h-screen flex items-center justify-center">
+    <section className="bg-gradient-to-r from-[#DFF5F7] via-[#DFF5F7] to-[#F0F7F0] min-h-screen flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 w-full">
         <div className="mb-12">
           <div className="flex justify-between mb-3 text-[#1A535C] font-medium">
             <p>Step 2 of 3</p>
             <p>67%</p>
           </div>
-          <div className="bg-[#4ECDC4] rounded-full h-3">
-            <div className="bg-[#FF6B6B] h-3 rounded-full rounded-r" style={{ width: '67%' }} />
+          <div className="bg-[#FFBC42] rounded-full h-3">
+            <div className="bg-[#2EA148] h-3 rounded-full rounded-r" style={{ width: '67%' }} />
           </div>
         </div>
 
@@ -58,7 +58,7 @@ export default function Onboarding2() {
         <div className="flex justify-center gap-4">
           <button onClick={() => navigate("/onboarding1")} className="border-2 border-[#BDDBD9] text-[#1A535C] px-8 py-4 font-semibold rounded-lg">Back</button>
 
-          <button onClick={handleContinue} disabled={!selectedLevel} className={`px-8 py-4 font-semibold rounded-lg ${selectedLevel ? "bg-[#FFB0A8] text-white" : "bg-gray-400 text-gray-200 cursor-not-allowed"}`}>Continue</button>
+          <button onClick={handleContinue} disabled={!selectedLevel} className={`px-8 py-4 font-semibold rounded-lg ${selectedLevel ? "bg-[#2EA148] text-white" : "bg-gray-400 text-white cursor-not-allowed"}`}>Continue</button>
         </div>
       </div>
     </section>
