@@ -1,5 +1,5 @@
 // src/services/authService.js
-import api from "../utils/axiosInstance";
+import api from "../services/api"
 
 /**
  * LOGIN: POST /api/users/login
