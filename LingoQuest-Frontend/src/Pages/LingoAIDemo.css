@@ -94,7 +94,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 75vh;
+  height: 110vh;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;
 }
@@ -104,7 +104,7 @@
 }
 
 .chat-header {
-  background: linear-gradient(135deg, #effafb 0%, #c2b4d1 100%);
+  background: linear-gradient(135deg, #effafb 0%, #2ea148 100%);
   color: rgb(0, 0, 0);
   padding: 25px;
   display: flex;
@@ -230,16 +230,19 @@
 /* Custom scrollbar */
 .messages-container::-webkit-scrollbar {
   width: 6px;
+  min-height: 600px;
 }
 
 .messages-container::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
+  min-height: 600px;
 }
 
 .messages-container::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #667eea, #764ba2);
   border-radius: 3px;
+
 }
 
 .welcome-message {
@@ -561,7 +564,7 @@
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #388953 0%, #2ea148 100%);
   color: white;
   text-align: center;
   position: relative;
