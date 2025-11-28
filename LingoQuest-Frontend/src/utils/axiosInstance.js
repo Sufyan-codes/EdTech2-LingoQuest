@@ -6,12 +6,41 @@ const api = axios.create({
   timeout: 15000,
 });
 
-// Attach token
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+  const rawUserInfo = localStorage.getItem("userInfo");
+  const rawUser = localStorage.getItem("user");
+  const tokenDirect = localStorage.getItem("token");
+
+  let parsedUserInfo = null;
+  let parsedUser = null;
+
+  try {
+    parsedUserInfo = rawUserInfo ? JSON.parse(rawUserInfo) : null;
+  } catch {}
+
+  try {
+    parsedUser = rawUser ? JSON.parse(rawUser) : null;
+  } catch {}
+
+  // Extract token from every possible storage shape
+  const token =
+    tokenDirect ||
+    parsedUserInfo?.token ||
+    parsedUser?.token ||
+    parsedUserInfo?.data?.token ||
+    parsedUser?.data?.token ||
+    null;
+
+  // Attach ONLY what backend needs:
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+
+  // Debug for development
+  if (import.meta.env.MODE === "development") {
+    console.log("Axios → Sending token:", token ? "YES" : "NO");
+  }
+
   return config;
 });
 
