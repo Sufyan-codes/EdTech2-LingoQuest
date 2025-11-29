@@ -37,10 +37,6 @@ import TutorDashboard from "./Pages/Tutors/TutorDashboard";
 import OTPVerification from "./Pages/Auth/Otp";
 import CreateNewPassword from "./Pages/Auth/Newpassword";
 
-// REMOVED: MirageJS - Now using real backend
-// if (process.env.NODE_ENV === "development" || true) {
-//   makeServer();
-// }
 
 const queryClient = new QueryClient();
 
