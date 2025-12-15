@@ -76,7 +76,7 @@ npm install
 npm run dev
 ```
 
-4. **Set up Python Chatbot **
+4. **Set up Python Chatbot**
 ```bash
 cd frontend
 python -m venv venv
