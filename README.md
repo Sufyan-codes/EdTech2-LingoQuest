@@ -1,6 +1,6 @@
 https://github.com/user-attachments/assets/c55e65ab-f303-4e0d-a2c7-e5b70d6273af
 
-# LingoQuest - AI-Powered Language Learning Platform 🌍
+# LingoQuest - AI-Powered Language Learning Platform
 
 **LingoQuest** is a modern, web-based language learning platform that combines interactive lessons, gamification, peer-to-peer collaboration, and an AI-powered chatbot tutor to make language learning engaging, accessible, and effective.
 
@@ -29,6 +29,11 @@ https://github.com/user-attachments/assets/c55e65ab-f303-4e0d-a2c7-e5b70d6273af
 - **Intuitive dashboard** with progress visualization
 - **Clean, engaging UI/UX**
 - **Real-time notifications**
+
+## Team
+
+- **Abu-safyan yusuf** - Frontend Developer & Backend Engineer
+- **Onome Oshevire** - Generative AI Developer & Backend Engineer
 
 ## Quick Start
 
@@ -64,7 +69,7 @@ npm install
 npm run dev
 ```
 
-4. **Set up Python Chatbot (Optional)**
+4. **Set up Python Chatbot **
 ```bash
 cd frontend
 python -m venv venv
@@ -136,24 +141,5 @@ lingoquest/
 - **Context Awareness**: Maintains conversation context
 - **Adaptive Teaching**: Adjusts difficulty based on user
 - **Multi-language Support**: Specialized models for each language
-
-## Deployment
-
-### **Production Build**
-```bash
-# Backend
-cd backend
-npm run build
-npm start
-
-# Frontend
-cd frontend
-npm run build
-```
-
-## Team
-
-- **Onome Oshevire** - Generative AI Developer & Backend Engineer
-- 
 
 <div align="center">
