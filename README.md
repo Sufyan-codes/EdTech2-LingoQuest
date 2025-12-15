@@ -97,16 +97,44 @@ lingoquest/
 │   ├── server.js              # Main server file
 │   └── package.json
 ├── frontend/                  # React Frontend
-│   ├── public/               # Static assets
-│   ├── src/
-│   │   ├── components/       # Reusable components
-│   │   ├── context/          # React context providers
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── pages/           # Page components
-│   │   ├── services/        # API services
-│   │   ├── assets/          # Images, icons, etc.
-│   │   └── main.jsx         # Entry point
-│   └── package.json
+   ├── public/               # Static assets
+   │   src/
+   ├── Pages/
+   │    ├── Auth/
+   │    ├── Onboarding/
+   │    ├── Dashboard/
+   │    ├── Tutors/
+   │    └── LingoAIDemo.jsx
+   │
+   ├── components/
+   │    ├── Layout.jsx
+   │    └── ProtectedRoute.jsx
+   │
+   ├── context/
+   │    ├── AuthContext.jsx
+   │    └── OnboardingContext.jsx
+   │
+   ├── services/
+   │    ├── api.js
+   │    ├── authService.js
+   │    ├── contentService.js
+   │    ├── tutorApi.js
+   │    └── userService.js
+   │
+   ├── utils/
+   │    └── axiosInstance.js
+   │
+   ├── assets/
+   ├── main.jsx
+   └── index.css
+│   
+│   
+│   
+│   
+│   
+│   
+│   
+│   
 ├── docs/                     # Documentation
 ├── scripts/                  # Deployment scripts
 └── README.md                # This file
