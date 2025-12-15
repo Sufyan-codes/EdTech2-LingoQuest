@@ -32,8 +32,15 @@ https://github.com/user-attachments/assets/c55e65ab-f303-4e0d-a2c7-e5b70d6273af
 
 ## Team
 
-- **Abu-safyan yusuf** - Frontend Developer & Backend Engineer
-- **Onome Oshevire** - Generative AI Developer & Backend Engineer
+- **Abu-safyan yusuf** - Frontend Developer
+- **Sean Moses Okonofua** - Backend Engineer 
+- **Onome Oshevire** - Generative AI Developer
+- **Hajara Muhammad** - Web Design
+- **Abubakar Abdulsalam** - Web Design
+- **Hajara Muhammad** - Web Design
+- **Onazi Precious** - UI/UX
+- **Salma Alademerin** - UI/UX
+
 
 ## Quick Start
 
