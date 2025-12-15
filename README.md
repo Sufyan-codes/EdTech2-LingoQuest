@@ -142,4 +142,12 @@ lingoquest/
 - **Adaptive Teaching**: Adjusts difficulty based on user
 - **Multi-language Support**: Specialized models for each language
 
+### **Project Links**
+
+Design (Figma): https://www.figma.com/design/9yX9CpjtUQVKh09wBiQUNI/Ui-designs?node-id=1-2&t=Fm5Q7kyp26lmZ6GI-1
+
+Project Presentation Slides: [Add link here]
+
+Demo / Pitch Deck: https://youtu.be/0hsqIC9BR5A
+
 <div align="center">
