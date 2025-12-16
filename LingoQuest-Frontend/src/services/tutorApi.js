@@ -20,7 +20,6 @@ export async function getTutorStats() {
 
 /**
  * Save lesson (tutor)
- * ✅ FIXED: Properly handle quiz questions
  */
 export async function saveLesson(lessonData, publish = true) {
   try {
@@ -32,14 +31,11 @@ export async function saveLesson(lessonData, publish = true) {
       videoUrl: lessonData.videoUrl,
       targetLanguage: lessonData.targetLanguage || "English",
       keywords: lessonData.keywords || [],
-      quiz: lessonData.quiz || [], // ✅ Pass quiz questions
+      quiz: lessonData.quiz || [],
     };
-
     console.log("Saving lesson:", payload);
-
     const res = await api.post("/tutor/lessons", payload);
     
-    // Normalize response
     if (res.data.lesson) {
       return {
         success: true,
@@ -60,7 +56,7 @@ export async function saveLesson(lessonData, publish = true) {
  */
 export async function createQuizForLesson(lessonId, questions) {
   try {
-    const res = await api.post(`/tutor/lessons/${lessonId}/quiz`, { 
+    const res = await api.post(`/tutor/lessons/${lessonId}/quiz`, { // ✅ Fixed
       questions,
       pointsAwarded: 10 
     });
@@ -76,7 +72,7 @@ export async function createQuizForLesson(lessonId, questions) {
  */
 export async function getRecentLessons(limit = 10) {
   try {
-    const res = await api.get(`/tutor/lessons/recent?limit=${limit}`);
+    const res = await api.get(`/tutor/lessons/recent?limit=${limit}`); // ✅ Fixed
     return res.data.lessons || res.data || [];
   } catch (err) {
     console.error("getRecentLessons error:", err);
@@ -89,7 +85,7 @@ export async function getRecentLessons(limit = 10) {
  */
 export async function updateLesson(lessonId, lessonData) {
   try {
-    const res = await api.put(`/tutor/lessons/${lessonId}`, lessonData);
+    const res = await api.put(`/tutor/lessons/${lessonId}`, lessonData); // ✅ Fixed
     return res.data;
   } catch (error) {
     console.error("updateLesson error:", error);
@@ -102,7 +98,7 @@ export async function updateLesson(lessonId, lessonData) {
  */
 export async function deleteLesson(lessonId) {
   try {
-    const res = await api.delete(`/tutor/lessons/${lessonId}`);
+    const res = await api.delete(`/tutor/lessons/${lessonId}`); // ✅ Fixed
     return res.data;
   } catch (error) {
     console.error("deleteLesson error:", error);

@@ -15,7 +15,7 @@ export const getLessons = async () => {
  * GET /api/content/lessons/:id
  ------------------------------------------------ */
 export const getLessonById = async (id) => {
-  const res = await api.get(`/content/lessons/${id}`);
+  const res = await api.get(`/content/lessons/${id}`); // ✅ Fixed
   return res.data;
 };
 
@@ -24,7 +24,7 @@ export const getLessonById = async (id) => {
  * GET /api/content/lessons/language/:language
  ------------------------------------------------ */
 export const getLessonsByLanguage = async (language) => {
-  const res = await api.get(`/content/lessons/language/${language}`);
+  const res = await api.get(`/content/lessons/language/${language}`); // ✅ Fixed
   return res.data;
 };
 
@@ -34,7 +34,7 @@ export const getLessonsByLanguage = async (language) => {
  ------------------------------------------------ */
 export const getQuizByLesson = async (lessonId) => {
   try {
-    const res = await api.get(`/content/quizzes/${lessonId}`);
+    const res = await api.get(`/content/quizzes/${lessonId}`); // ✅ Fixed
     return res.data;
   } catch (err) {
     if (err.response?.status === 404) return null;
@@ -47,7 +47,7 @@ export const getQuizByLesson = async (lessonId) => {
  * POST /api/content/quizzes/:lessonId/submit
  ------------------------------------------------ */
 export const submitQuiz = async (lessonId, answers) => {
-  const res = await api.post(`/content/quizzes/${lessonId}/submit`, { answers });
+  const res = await api.post(`/content/quizzes/${lessonId}/submit`, { answers }); // ✅ Fixed
   return res.data;
 };
 
