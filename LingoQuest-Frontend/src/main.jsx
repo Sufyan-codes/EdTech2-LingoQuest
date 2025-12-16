@@ -9,36 +9,36 @@ import {
   Route,
 } from "react-router-dom";
 
-import LogIn from "./Pages/Auth/Login";
-import Signup from "./Pages/Auth/Signup";
-import ForgottenPassword from "./Pages/Auth/ForgottenPassword";
+import LogIn from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
+import ForgottenPassword from "./pages/auth/ForgottenPassword";
 
-import ChooseLanguage from "./Pages/Onboarding/ChooseLanguage";
-import Onboarding1 from "./Pages/Onboarding/Onboarding1";
-import Onboarding2 from "./Pages/Onboarding/Onboarding2";
-import Onboarding3 from "./Pages/Onboarding/Onboarding3";
+import ChooseLanguage from "./pages/onboarding/ChooseLanguage";
+import Onboarding1 from "./pages/onboarding/Onboarding1";
+import Onboarding2 from "./pages/onboarding/Onboarding2";
+import Onboarding3 from "./pages/onboarding/Onboarding3";
 
-import LingoAIDemo from "./Pages/LingoAIDemo.jsx";
+import LingoAIDemo from "./pages/LingoAIDemo.jsx";
 
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
-import Lessons from "./Pages/Dashboard/Dashboard/Lessons/Lessons";
-import LessonPage from "./Pages/Dashboard/Dashboard/Lessons/LessonPage";
-import Quiz from "./Pages/Dashboard/Dashboard/Quiz/Quiz";
+import Dashboard from "./pages/dashboard/dashboard/Dashboard";
+import Lessons from "./pages/dashboard/dashboard/lessons/Lessons";
+import LessonPage from "./pages/dashboard/dashboard/lessons/LessonPage";
+import Quiz from "./pages/dashboard/dashboard/quiz/Quiz";
 
-import LingoAIPage from "./Pages/Dashboard/Dashboard/LingoAIPage.jsx";
+import LingoAIPage from "./pages/dashboard/dashboard/LingoAIPage.jsx";
 
-import Leaderboard from "./Pages/Dashboard/Dashboard/LeaderboardCard";
-import Profile from "./Pages/Dashboard/Dashboard/profile/Profile"; 
+import Leaderboard from "./pages/dashboard/dashboard/LeaderboardCard";
+import Profile from "./pages/dashboard/dashboard/profile/Profile"; 
 import { AuthProvider } from "./context/AuthContext";
 import { OnboardingProvider } from "./context/OnboardingContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import WelcomeScreen from "./Pages/Onboarding/WelcomeScreen";
-import TutorDashboard from "./Pages/Tutors/TutorDashboard";
-import OTPVerification from "./Pages/Auth/Otp";
-import CreateNewPassword from "./Pages/Auth/Newpassword";
+import WelcomeScreen from "./pages/onboarding/WelcomeScreen";
+import TutorDashboard from "./pages/tutors/TutorDashboard";
+import OTPVerification from "./pages/auth/Otp";
+import CreateNewPassword from "./pages/auth/Newpassword";
 
 
 const queryClient = new QueryClient();
