@@ -5,7 +5,7 @@ import {
   getRecentLessons, 
   getTutorStats 
 } from "../../services/tutorApi";
-import heroImg from "../../assets/Hero image.svg";
+import heroImg from "../../Assets/Hero image.svg";
 
 export default function TutorDashboard() {
   // Stats from backend

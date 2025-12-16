@@ -1,8 +1,8 @@
 import React from "react";
-import world from "../../assets/Icons/lets-icons_world-light.svg";
-import badge from "../../assets/Icons/marketeq_reward.svg";
-import ai from "../../assets/Icons/mingcute_ai-line.svg";
-import chat from "../../assets/Icons/ph_chat-bold.svg";
+import world from "../../Assets/Icons/lets-icons_world-light.svg";
+import badge from "../../Assets/Icons/marketeq_reward.svg";
+import ai from "../../Assets/Icons/mingcute_ai-line.svg";
+import chat from "../../Assets/Icons/ph_chat-bold.svg";
 
 export default function WhyChooseUs() {
   return (
