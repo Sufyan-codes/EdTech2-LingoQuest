@@ -1,4 +1,4 @@
-https://github.com/user-attachments/assets/c55e65ab-f303-4e0d-a2c7-e5b70d6273af
+https://github.com/user-attachments/assets/4f29b887-e23c-4462-995d-15165e536a03
 
 # LingoQuest - AI-Powered Language Learning Platform
 
