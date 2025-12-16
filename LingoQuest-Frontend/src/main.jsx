@@ -14,9 +14,9 @@ import Signup from "./Pages/Auth/Signup";
 import ForgottenPassword from "./Pages/Auth/ForgottenPassword";
 
 import ChooseLanguage from "./Pages/Onboarding/ChooseLanguage";
-import Onboarding1 from "./pages/Onboarding/Onboarding1";
-import Onboarding2 from "./pages/Onboarding/Onboarding2";
-import Onboarding3 from "./pages/Onboarding/Onboarding3";
+import Onboarding1 from "./Pages/Onboarding/Onboarding1";
+import Onboarding2 from "./Pages/Onboarding/Onboarding2";
+import Onboarding3 from "./Pages/Onboarding/Onboarding3";
 
 import LingoAIDemo from "./Pages/LingoAIDemo.jsx";
 
