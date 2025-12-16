@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { updateUserProfile } from "../../services/user";
 import { useOnboarding } from "../../context/OnboardingContext";
-import career from "../../assets/Icons/Onboarding/suitcase.svg";
+import suitcase from "../../assets/Icons/Onboarding/suitcase.svg";
 import student from "../../assets/Icons/Onboarding/student.svg";
-import fun from "../../assets/Icons/Onboarding/gameController.svg";
-import travel from "../../assets/Icons/Onboarding/vector.svg";
+import gameController from "../../assets/Icons/Onboarding/gameController.svg";
+import vector from "../../assets/Icons/Onboarding/vector.svg";
 
 export default function Onboarding1() {
   const [selectedGoal, setSelectedGoal] = useState(null);
@@ -13,10 +13,10 @@ export default function Onboarding1() {
   const { setGoal, data } = useOnboarding();
 
   const goals = [
-    { id: "travel", name: "Travel", icon: travel },
+    { id: "travel", name: "Travel", icon: vector },
     { id: "study", name: "Study Abroad", icon: student },
-    { id: "career", name: "Career", icon: career },
-    { id: "fun", name: "Fun", icon: fun }
+    { id: "career", name: "Career", icon: suitcase },
+    { id: "fun", name: "Fun", icon: gameController }
   ];
 
   const handleContinue = () => {
