@@ -1,5 +1,5 @@
 // src/services/contentService.js
-import api from "../utils/axiosInstance";
+import api from "./api";
 
 /** ---------------------------------------------
  * GET ALL LESSONS

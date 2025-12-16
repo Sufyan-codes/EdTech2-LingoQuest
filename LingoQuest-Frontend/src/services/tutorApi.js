@@ -1,5 +1,5 @@
 // src/services/tutorApi.js
-import api from "../utils/axiosInstance";
+import api from "./api";
 
 /**
  * Get tutor dashboard stats
