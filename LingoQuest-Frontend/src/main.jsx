@@ -9,14 +9,14 @@ import {
   Route,
 } from "react-router-dom";
 
-import LogIn from "./pages/auth/Login";
+import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import ForgottenPassword from "./pages/auth/ForgottenPassword";
 
 import ChooseLanguage from "./pages/onboarding/ChooseLanguage";
-import Onboarding1 from "./pages/onboarding/Onboarding1";
-import Onboarding2 from "./pages/onboarding/Onboarding2";
-import Onboarding3 from "./pages/onboarding/Onboarding3";
+import Onboarding1 from "./pages/onboarding/onboarding1";
+import Onboarding2 from "./pages/onboarding/onboarding2";
+import Onboarding3 from "./pages/onboarding/onboarding3";
 
 import LingoAIDemo from "./pages/LingoAIDemo.jsx";
 
@@ -48,7 +48,7 @@ const router = createBrowserRouter(
     <>
       {/* PUBLIC ROUTES */}
       <Route path="/" element={<Layout />} />
-      <Route path="/login" element={<LogIn />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotpassword" element={<ForgottenPassword />} />
       <Route path="/otp" element={<OTPVerification />} />
