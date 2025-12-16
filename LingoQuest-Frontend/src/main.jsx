@@ -9,8 +9,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from "./pages/auth/login.jsx"
-import Signup from "./pages/auth/signup.jsx"
+import Login from "../src/pages/auth/Login"
+import Signup from "../src/pages/auth/Signup"
 import ForgottenPassword from "./pages/auth/ForgottenPassword";
 
 import ChooseLanguage from "./pages/onboarding/ChooseLanguage";
