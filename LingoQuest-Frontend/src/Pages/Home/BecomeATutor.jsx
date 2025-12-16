@@ -1,8 +1,8 @@
 import React from "react";
-import french from "../../Assets/Icons/FR.svg";
-import spain from "../../Assets/Icons/ES.svg";
-import chinese from "../../Assets/Icons/CN.svg";
-import nigeria from "../../Assets/Icons/NG.svg";
+import french from "../../assets/icons/FR.svg";
+import spain from "../../assets/icons/ES.svg";
+import chinese from "../../assets/icons/CN.svg";
+import nigeria from "../../assets/icons/NG.svg";
 import { Link } from "react-router-dom";
 
 export default function BecomeATutor() {

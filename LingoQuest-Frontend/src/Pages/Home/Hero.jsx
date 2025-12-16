@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "../../Assets/Hero image.svg";
+import hero from "../../assets/Hero image.svg";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
