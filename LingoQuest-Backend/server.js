@@ -6,6 +6,16 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./lingoquest-backend/config/db");
 
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? [
+        'https://agent-69415bc513ba0f3a574--tranquil-panda-556022.netlify.app',
+        'https://tranquil-panda-556022.netlify.app'
+      ]
+    : 'http://localhost:3000',
+  credentials: true
+}));
+
 // Routes
 const userRoutes = require("./lingoquest-backend/routes/userRoutes");
 const contentRoutes = require("./lingoquest-backend/routes/contentRoutes");
@@ -17,16 +27,6 @@ connectDB();
 
 const app = express();
 
-// ✅ CORS — ONCE, BEFORE ROUTES
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://edtech2-lingoquest-6w38.onrender.com",
-    ],
-    credentials: true,
-  })
-);
 
 // Middleware
 app.use(express.json());
