@@ -9,9 +9,9 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from "./pages/auth/Login.jsx"
-import Signup from "./pages/auth/Signup.jsx"
-import ForgottenPassword from "./pages/auth/ForgottenPassword";
+import Login from "./pages/Auth/Login.jsx"
+import Signup from "./pages/Auth/Signup.jsx"
+import ForgottenPassword from "./pages/Auth/ForgottenPassword";
 
 import ChooseLanguage from "./pages/onboarding/ChooseLanguage";
 import Onboarding1 from "./pages/onboarding/onboarding1";
@@ -37,8 +37,8 @@ import { OnboardingProvider } from "./context/OnboardingContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import WelcomeScreen from "./pages/onboarding/WelcomeScreen";
 import TutorDashboard from "./pages/tutors/TutorDashboard";
-import OTPVerification from "./pages/auth/Otp";
-import CreateNewPassword from "./pages/auth/Newpassword";
+import OTPVerification from "./pages/Auth/Otp";
+import CreateNewPassword from "./pages/Auth/Newpassword";
 
 
 const queryClient = new QueryClient();
