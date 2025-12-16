@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE || "https://edtech2-lingoquest-6w38.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_URL || "https://edtech2-lingoquest-6w38.onrender.com/api",
   timeout: 15000,
 });
 
