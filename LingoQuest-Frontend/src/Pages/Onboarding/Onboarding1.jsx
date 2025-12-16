@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { updateUserProfile } from "../../services/user";
 import { useOnboarding } from "../../context/OnboardingContext";
-import career from "../../assets/Icons/onboarding/Suitcase.svg";
-import student from "../../assets/Icons/onboarding/Student.svg";
-import fun from "../../assets/Icons/onboarding/GameController.svg";
-import travel from "../../assets/Icons/onboarding/vector.svg";
+import career from "../../assets/Icons/Onboarding/Suitcase.svg";
+import student from "../../assets/Icons/Onboarding/Student.svg";
+import fun from "../../assets/Icons/Onboarding/GameController.svg";
+import travel from "../../assets/Icons/Onboarding/vector.svg";
 
 export default function Onboarding1() {
   const [selectedGoal, setSelectedGoal] = useState(null);
