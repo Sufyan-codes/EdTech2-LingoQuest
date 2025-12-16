@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { useOnboarding } from "../../context/OnboardingContext";
 
 // Import all flag assets
-import FR from "../../assets/icons/FR.svg";
-import ES from "../../assets/icons/ES.svg";
-import CN from "../../assets/icons/CN.svg";
-import NG from "../../assets/icons/NG.svg";
+import FR from "../../assets/Icons/FR.svg";
+import ES from "../../assets/Icons/ES.svg";
+import CN from "../../assets/Icons/CN.svg";
+import NG from "../../assets/Icons/NG.svg";
 
 export default function ChooseLanguage() {
   const navigate = useNavigate();
