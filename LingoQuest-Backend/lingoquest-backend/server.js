@@ -6,6 +6,16 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 
+// ✅ CORS FIRST
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://edtech2-lingoquest-6w38.onrender.com",
+    ],
+    credentials: true,
+  })
+);
 // Routes
 const userRoutes = require("./userRoutes");
 const contentRoutes = require("./contentRoutes");
@@ -17,16 +27,7 @@ connectDB();
 
 const app = express();
 
-// ✅ CORS FIRST
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://edtech2-lingoquest-6w38.onrender.com",
-    ],
-    credentials: true,
-  })
-);
+
 
 app.use(express.json());
 
