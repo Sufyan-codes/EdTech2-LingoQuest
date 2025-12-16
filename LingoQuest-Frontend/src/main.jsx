@@ -18,7 +18,7 @@ import Onboarding1 from "./pages/onboarding/onboarding1";
 import Onboarding2 from "./pages/onboarding/onboarding2";
 import Onboarding3 from "./pages/onboarding/onboarding3";
 
-import LingoAIDemo from "./pages/LingoAIDemo.jsx";
+import LingoAIDemo from "./pages/lingoai/LingoAIDemo";
 
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
