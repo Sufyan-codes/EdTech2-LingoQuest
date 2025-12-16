@@ -6,6 +6,16 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./lingoquest-backend/config/db");
 
+
+// Routes
+const userRoutes = require("./lingoquest-backend/routes/userRoutes");
+const contentRoutes = require("./lingoquest-backend/routes/contentRoutes");
+const tutorRoutes = require("./lingoquest-backend/routes/tutorRoutes");
+const lessonRoutes = require("./lingoquest-backend/routes/lessonRoutes");
+
+// Connect DB
+connectDB();
+
 // ✅ CORS — ONCE, BEFORE ROUTES
 app.use(
   cors({
@@ -17,16 +27,6 @@ app.use(
   })
 );
 
-
-
-// Routes
-const userRoutes = require("./lingoquest-backend/routes/userRoutes");
-const contentRoutes = require("./lingoquest-backend/routes/contentRoutes");
-const tutorRoutes = require("./lingoquest-backend/routes/tutorRoutes");
-const lessonRoutes = require("./lingoquest-backend/routes/lessonRoutes");
-
-// Connect DB
-connectDB();
 
 const app = express();
 

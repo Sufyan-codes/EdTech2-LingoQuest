@@ -9,8 +9,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from "./pages/Auth/Login.jsx"
-import Signup from "./pages/Auth/Signup.jsx"
+import Login from "./pages/auth/Login.jsx"
+import Signup from "./pages/auth/Signup.jsx"
 import ForgottenPassword from "./pages/auth/ForgottenPassword";
 
 import ChooseLanguage from "./pages/onboarding/ChooseLanguage";
@@ -18,7 +18,7 @@ import Onboarding1 from "./pages/onboarding/onboarding1";
 import Onboarding2 from "./pages/onboarding/onboarding2";
 import Onboarding3 from "./pages/onboarding/onboarding3";
 
-import LingoAIDemo from "./pages/lingoai/LingoAIDemo";
+import LingoAIDemo from "./pages/LingoAIDemo";
 
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";

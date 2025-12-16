@@ -6,6 +6,16 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 
+
+// Routes
+const userRoutes = require("./userRoutes");
+const contentRoutes = require("./contentRoutes");
+const tutorRoutes = require("./tutorRoutes");
+const lessonRoutes = require("./lessonRoutes");
+
+// Connect DB
+connectDB();
+
 // ✅ CORS FIRST
 app.use(
   cors({
@@ -16,14 +26,6 @@ app.use(
     credentials: true,
   })
 );
-// Routes
-const userRoutes = require("./userRoutes");
-const contentRoutes = require("./contentRoutes");
-const tutorRoutes = require("./tutorRoutes");
-const lessonRoutes = require("./lessonRoutes");
-
-// Connect DB
-connectDB();
 
 const app = express();
 
