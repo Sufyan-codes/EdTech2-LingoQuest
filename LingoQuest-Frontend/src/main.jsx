@@ -31,7 +31,7 @@ import Quiz from "./pages/dashboard/dashboard/quiz/Quiz";
 import LingoAIPage from "./pages/dashboard/dashboard/LingoAIPage.jsx";
 
 import Leaderboard from "./pages/dashboard/dashboard/LeaderboardCard";
-import Profile from "./pages/dashboard/dashboard/profile/Profile"; 
+import Profile from "./pages/dashboard/dashboard/profile/Profile";
 import { AuthProvider } from "./context/AuthContext";
 import { OnboardingProvider } from "./context/OnboardingContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
