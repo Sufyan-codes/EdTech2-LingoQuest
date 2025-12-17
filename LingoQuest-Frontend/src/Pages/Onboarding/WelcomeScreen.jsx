@@ -2,9 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import introImg from "../../assets/onboarding/image 2.svg";
-import convoImg from "../../assets/onboarding/image 3.svg";
-import grammarImg from "../../assets/onboarding/image 4.svg";
+import introImg from "../../assets/Onboarding/image 2.svg";
+import convoImg from "../../assets/Onboarding/image 3.svg";
+import grammarImg from "../../assets/Onboarding/image 4.svg";
 
 export default function WelcomeScreen() {
   const { user } = useAuth();
