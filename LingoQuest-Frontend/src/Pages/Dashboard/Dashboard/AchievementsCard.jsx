@@ -1,6 +1,6 @@
 import React from "react";
-import trophy from "../../../assets/Dashboard/trophy1.svg"
-import star from "../../../assets/Dashboard/star.svg"
+import trophy from "../../../assets/Dashboard/Trophy1.svg"
+import star from "../../../assets/Dashboard/Star.svg"
 import BookOpen from "../../../assets/Dashboard/BookOpen (1).svg"
 import img from "../../../assets/Dashboard/achievement-illustration-XEdEaO5Z 1.svg"
 
