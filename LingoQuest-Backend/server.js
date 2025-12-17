@@ -22,7 +22,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://edtech2-lingoquest-01.netlify.app",
+    "https://edtech2-lingoquest-mvp.netlify.app",
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -67,4 +67,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
 
