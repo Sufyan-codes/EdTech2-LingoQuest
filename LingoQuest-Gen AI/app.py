@@ -23,11 +23,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, resources={
     r"/api/*": {
-        "origins": [
-            "https://your-netlify-site.netlify.app",  # Your Netlify URL
-            "http://localhost:3000",
-            "http://localhost:5173"
-        ],
+        "origins": ["*"],  # For now, allow all. You can restrict later.
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"]
     }
@@ -310,3 +306,4 @@ def server_error(e):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
     app.run(host='0.0.0.0', port=port)
+
