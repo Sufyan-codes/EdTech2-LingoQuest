@@ -28,9 +28,11 @@ export default function CoursesCard({ courses = [], loading }) {
         ))}
       </div>
 
-      <Link to='/lessons' className="mt-6 w-full py-3 rounded-full bg-[#2EA148] text-white font-medium text-sm border border-[#F4DFA2] hover:bg-[#FFEABB] transition">
+ <div  className="mt-6 w-full py-3 rounded-full bg-[#2EA148] text-white font-medium text-sm border border-[#F4DFA2] hover:bg-[#FFEABB] transition">
+      <Link to='/lessons'>
         View All Courses
       </Link>
+ </div>
     </div>
   );
 }
