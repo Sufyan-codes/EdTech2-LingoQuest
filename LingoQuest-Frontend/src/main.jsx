@@ -13,10 +13,10 @@ import Login from "./Pages/Auth/Login.jsx";
 import Signup from "./Pages/Auth/Signup.jsx";
 import ForgottenPassword from "./Pages/Auth/ForgottenPassword";
 
-import ChooseLanguage from "./Pages/onboarding/ChooseLanguage";
-import Onboarding1 from "./Pages/onboarding/onboarding1";
-import Onboarding2 from "./Pages/onboarding/onboarding2";
-import Onboarding3 from "./Pages/onboarding/onboarding3";
+import ChooseLanguage from "./Pages/Onboarding/ChooseLanguage";
+import Onboarding1 from "./Pages/Onboarding/Onboarding1";
+import Onboarding2 from "./Pages/Onboarding/Onboarding2";
+import Onboarding3 from "./Pages/Onboarding/Onboarding3";
 
 import LingoAIDemo from "./Pages/LingoAIDemo";
 
@@ -35,7 +35,7 @@ import Profile from "./Pages/Dashboard/Dashboard/profile/Profile";
 import { AuthProvider } from "./context/AuthContext";
 import { OnboardingProvider } from "./context/OnboardingContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import WelcomeScreen from "./Pages/onboarding/WelcomeScreen";
+import WelcomeScreen from "./Pages/Onboarding/WelcomeScreen";
 import TutorDashboard from "./Pages/Tutors/TutorDashboard";
 import OTPVerification from "./Pages/Auth/Otp";
 import CreateNewPassword from "./Pages/Auth/Newpassword";
