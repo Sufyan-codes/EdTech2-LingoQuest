@@ -9,36 +9,36 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from "./pages/auth/Login.jsx";
-import Signup from "./pages/auth/Signup.jsx";
-import ForgottenPassword from "./pages/auth/ForgottenPassword";
+import Login from "./Pages/Auth/Login.jsx";
+import Signup from "./Pages/Auth/Signup.jsx";
+import ForgottenPassword from "./Pages/Auth/ForgottenPassword";
 
-import ChooseLanguage from "./Pages/onboarding/ChooseLanguage";
-import Onboarding1 from "./Pages/onboarding/onboarding1";
-import Onboarding2 from "./Pages/onboarding/onboarding2";
-import Onboarding3 from "./Pages/onboarding/onboarding3";
+import ChooseLanguage from "./Pages/Onboarding/ChooseLanguage";
+import Onboarding1 from "./Pages/Onboarding/onboarding1";
+import Onboarding2 from "./Pages/Onboarding/onboarding2";
+import Onboarding3 from "./Pages/Onboarding/onboarding3";
 
-import LingoAIDemo from "./pages/LingoAIDemo";
+import LingoAIDemo from "./Pages/LingoAIDemo";
 
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-import Dashboard from "./pages/dashboard/dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Lessons from "./Pages/Dashboard/Dashboard/lessons/Lessons";
 import LessonPage from "./Pages/Dashboard/Dashboard/lessons/LessonPage";
 import Quiz from "./Pages/Dashboard/Dashboard/quiz/Quiz";
 
-import LingoAIPage from "./pages/dashboard/dashboard/LingoAIPage.jsx";
+import LingoAIPage from "./Pages/Dashboard/Dashboard/LingoAIPage.jsx";
 
-import Leaderboard from "./pages/dashboard/dashboard/LeaderboardCard";
-import Profile from "./pages/dashboard/dashboard/profile/Profile";
+import Leaderboard from "./Pages/Dashboard/Dashboard/LeaderboardCard";
+import Profile from "./Pages/Dashboard/Dashboard/profile/Profile";
 import { AuthProvider } from "./context/AuthContext";
 import { OnboardingProvider } from "./context/OnboardingContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import WelcomeScreen from "./Pages/onboarding/WelcomeScreen";
-import TutorDashboard from "./Pages/tutors/TutorDashboard";
-import OTPVerification from "./pages/auth/Otp";
-import CreateNewPassword from "./pages/auth/Newpassword";
+import WelcomeScreen from "./Pages/Onboarding/WelcomeScreen";
+import TutorDashboard from "./Pages/Tutors/TutorDashboard";
+import OTPVerification from "./Pages/Auth/Otp";
+import CreateNewPassword from "./Pages/Auth/Newpassword";
 
 const queryClient = new QueryClient();
 
