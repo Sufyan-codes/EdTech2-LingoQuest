@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Add this import
+import home from "../../../assets/Dashboard/House.svg"
 import lesson from "../../../assets/Dashboard/BookOpen (1).svg"
 import CheckCircle from "../../../assets/Dashboard/CheckCircle.svg"
 import trophy from "../../../assets/Dashboard/Trophy.svg"
