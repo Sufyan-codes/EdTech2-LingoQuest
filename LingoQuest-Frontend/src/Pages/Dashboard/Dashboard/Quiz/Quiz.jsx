@@ -136,7 +136,7 @@ export default function Quiz() {
     return <QuizResults quizData={quizData} answers={answers} score={score} />;
 
   return (
-    return (
+    
   <div className="min-h-screen bg-[#FFF9EB] px-4 sm:px-6 md:px-10 py-6 md:py-10">
     {/* Top Bar */}
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
