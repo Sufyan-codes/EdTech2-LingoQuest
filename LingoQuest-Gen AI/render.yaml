@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lingoquest-backend
+    env: python
+    region: oregon  # or singapore, frankfurt, ohio, etc.
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: DEEPGRAM_API_KEY
+        sync: false
+    autoDeploy: true
