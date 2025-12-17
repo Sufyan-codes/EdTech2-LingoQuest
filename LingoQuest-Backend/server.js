@@ -18,12 +18,15 @@ connectDB();
 // ✅ CREATE APP FIRST
 const app = express();
 
+// ✅ HANDLE PREFLIGHT REQUESTS (THIS IS THE MISSING PIECE)
+app.options("*", cors());
+
 // ✅ CORS — BEFORE ROUTES
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://edtech2-lingoquest-01.netlify.app", // ✅ NETLIFY
+      "https://edtech2-lingoquest-01.netlify.app",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
