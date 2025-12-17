@@ -1,8 +1,8 @@
 import React from "react";
-import french from "../../assets/icons/FR.svg";
-import spain from "../../assets/icons/ES.svg";
-import chinese from "../../assets/icons/CN.svg";
-import nigeria from "../../assets/icons/NG.svg";
+import french from "../../assets/Icons/FR.svg";
+import spain from "../../assets/Icons/ES.svg";
+import chinese from "../../assets/Icons/CN.svg";
+import nigeria from "../../assets/Icons/NG.svg";
 import { Link } from "react-router-dom";
 
 export default function Languages() {
