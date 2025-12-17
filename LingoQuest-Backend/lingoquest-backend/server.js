@@ -19,17 +19,16 @@ connectDB();
 const app = express();
 
 // ✅ CORS — BEFORE ROUTES
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://edtech2-lingoquest-01.netlify.app", // ✅ NETLIFY
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://edtech2-lingoquest-01.netlify.app",
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
 
 // Middleware
 app.use(express.json());
