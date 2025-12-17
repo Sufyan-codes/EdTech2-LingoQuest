@@ -24,9 +24,9 @@ import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
-import Lessons from "./Pages/Dashboard/Dashboard/lessons/Lessons";
-import LessonPage from "./Pages/Dashboard/Dashboard/lessons/LessonPage";
-import Quiz from "./Pages/Dashboard/Dashboard/quiz/Quiz";
+import Lessons from "./Pages/Dashboard/Dashboard/Lessons/Lessons";
+import LessonPage from "./Pages/Dashboard/Dashboard/Lessons/LessonPage";
+import Quiz from "./Pages/Dashboard/Dashboard/Quiz/Quiz";
 
 import LingoAIPage from "./Pages/Dashboard/Dashboard/LingoAIPage.jsx";
 
