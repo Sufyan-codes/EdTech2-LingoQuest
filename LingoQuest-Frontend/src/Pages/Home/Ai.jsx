@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import ai from "../../Assets/Icons/mingcute_ai-line.svg";
-import user from "../../Assets/Icons/user.svg"
+import ai from "../../assets/Icons/mingcute_ai-line.svg";
+import user from "../../assets/Icons/user.svg"
 
 export default function Ai() {
   const navigate = useNavigate();
