@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import MobileNav from "./MobileNav";
-import { useNavigate } from "react-router-dom";
 
 export default function LingoAIPage() {
   const [messages, setMessages] = useState([]);
@@ -15,7 +14,9 @@ export default function LingoAIPage() {
   
   const messagesEndRef = useRef(null);
   const audioRef = useRef(null);
-  const navigate = useNavigate();
+
+  // Get API URL from environment variable
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -29,7 +30,7 @@ export default function LingoAIPage() {
   const startNewSession = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/session/new', {
+      const response = await fetch(`${API_URL}/api/session/new`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ export default function LingoAIPage() {
       console.error('Error starting session:', error);
       setMessages([{
         id: 1,
-        text: 'Welcome to Lingo AI! Currently, the AI tutor is unavailable. Please try again later or contact support.',
+        text: 'Welcome to Lingo AI! Currently, the AI tutor is unavailable. Please make sure the backend is running on the correct URL.',
         sender: "ai",
         timestamp: new Date()
       }]);
@@ -79,7 +80,7 @@ export default function LingoAIPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5001/api/chat', {
+      const response = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +121,7 @@ export default function LingoAIPage() {
       console.error('Error:', error);
       setMessages(prev => [...prev, { 
         id: messages.length + 2,
-        text: 'Sorry, I cannot connect to the AI tutor right now. Please try again later or contact support.',
+        text: 'Sorry, I cannot connect to the AI tutor right now. Please check your connection and try again.',
         sender: "ai",
         timestamp: new Date()
       }]);
@@ -146,7 +147,7 @@ export default function LingoAIPage() {
 
     try {
       setLoading(true);
-      await fetch('http://localhost:5001/api/session/reset', {
+      await fetch(`${API_URL}/api/session/reset`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -169,6 +170,7 @@ export default function LingoAIPage() {
 
   const handleLanguageChange = (newLanguage) => {
     setLanguage(newLanguage);
+    // Reset conversation when language changes
     setTimeout(() => {
       startNewSession();
     }, 100);
@@ -176,6 +178,7 @@ export default function LingoAIPage() {
 
   const handleProficiencyChange = (newProficiency) => {
     setProficiency(newProficiency);
+    // Reset conversation when proficiency changes
     setTimeout(() => {
       startNewSession();
     }, 100);
@@ -411,6 +414,12 @@ export default function LingoAIPage() {
                 <div>
                   <p className="text-sm text-gray-500">Messages</p>
                   <p className="font-medium">{messages.length} total</p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Backend Status</p>
+                  <p className="font-medium text-green-600">
+                    {API_URL.includes('render.com') ? 'Production (Render)' : 'Local'}
+                  </p>
                 </div>
               </div>
             </div>
