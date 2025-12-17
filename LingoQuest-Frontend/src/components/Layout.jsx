@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Hero from "../Pages/home/Hero";
+import Hero from "../Pages/Home/Hero";
 import WhyChooseUs from "../Pages/Home/WhyChooseUs";
 import HowItWorks from "../Pages/Home/HowItWorks";
 import Languages from "../Pages/Home/Languages";
