@@ -6,6 +6,9 @@ export default function LingoAICard() {
   const [loading, setLoading] = useState(false);
   const [sessionId, setSessionId] = useState(null);
 
+  // Get API URL from environment variable
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
   // Initialize session on component mount
   useEffect(() => {
     startNewSession();
@@ -13,7 +16,7 @@ export default function LingoAICard() {
 
   const startNewSession = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/session/new', {
+      const response = await fetch(`${API_URL}/api/session/new`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +47,7 @@ export default function LingoAICard() {
     setPrompt("");
 
     try {
-      const response = await fetch('http://localhost:5001/api/chat', {
+      const response = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -134,7 +137,6 @@ export default function LingoAICard() {
         </div>
       )}
 
-      {/* THIS IS THE MISSING SECTION - Add this to show responses */}
       {response && !loading && (
         <div className="bg-gradient-to-r from-[#DFF5F7] to-[#E8F7F8] p-4 rounded-lg mb-4">
           <div className="flex items-start gap-3 mb-3">
