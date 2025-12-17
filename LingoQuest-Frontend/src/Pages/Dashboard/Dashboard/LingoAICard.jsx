@@ -7,7 +7,7 @@ export default function LingoAICard() {
   const [sessionId, setSessionId] = useState(null);
 
   // Get API URL from environment variable
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+  const API_URL = 'https://generative-ai-sbta.onrender.com' || 'http://localhost:5001';
 
   // Initialize session on component mount
   useEffect(() => {
@@ -199,3 +199,4 @@ export default function LingoAICard() {
     </div>
   );
 }
+
