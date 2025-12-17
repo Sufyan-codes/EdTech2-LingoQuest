@@ -1,36 +1,37 @@
-// LOAD ENV FIRST
 const dotenv = require("dotenv");
 dotenv.config();
 
 const express = require("express");
 const cors = require("cors");
-const connectDB = require("./config/db");
 
+const connectDB = require("./lingoquest-backend/config/db");
 
 // Routes
-const userRoutes = require("./userRoutes");
-const contentRoutes = require("./contentRoutes");
-const tutorRoutes = require("./tutorRoutes");
-const lessonRoutes = require("./lessonRoutes");
+const userRoutes = require("./lingoquest-backend/routes/userRoutes");
+const contentRoutes = require("./lingoquest-backend/routes/contentRoutes");
+const tutorRoutes = require("./lingoquest-backend/routes/tutorRoutes");
+const lessonRoutes = require("./lingoquest-backend/routes/lessonRoutes");
 
 // Connect DB
 connectDB();
 
-// ✅ CORS FIRST
+// ✅ CREATE APP FIRST
+const app = express();
+
+// ✅ CORS — BEFORE ROUTES
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://edtech2-lingoquest-6w38.onrender.com",
+      "https://edtech2-lingoquest-01.netlify.app", // ✅ NETLIFY
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-const app = express();
-
-
-
+// Middleware
 app.use(express.json());
 
 // Routes
@@ -39,18 +40,14 @@ app.use("/api/content", contentRoutes);
 app.use("/api/tutor", tutorRoutes);
 app.use("/api/lessons", lessonRoutes);
 
+// Health
+app.get("/health", (req, res) => {
+  res.json({ status: "OK", message: "API running" });
+});
+
 // Root
 app.get("/", (req, res) => {
   res.send("LingoQuest API is running...");
-});
-
-// Error handler
-app.use((err, req, res, next) => {
-  console.error("Server error:", err);
-  res.status(500).json({
-    message: "Internal server error",
-    error: process.env.NODE_ENV === "development" ? err.message : undefined,
-  });
 });
 
 // Start server
