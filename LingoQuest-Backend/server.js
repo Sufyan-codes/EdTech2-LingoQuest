@@ -1,11 +1,10 @@
-// server.js
 const dotenv = require("dotenv");
-dotenv.config(); // ✅ LOAD ENV FIRST
+dotenv.config();
 
 const express = require("express");
 const cors = require("cors");
-const connectDB = require("./lingoquest-backend/config/db");
 
+const connectDB = require("./lingoquest-backend/config/db");
 
 // Routes
 const userRoutes = require("./lingoquest-backend/routes/userRoutes");
@@ -16,20 +15,21 @@ const lessonRoutes = require("./lingoquest-backend/routes/lessonRoutes");
 // Connect DB
 connectDB();
 
-// ✅ CORS — ONCE, BEFORE ROUTES
+// ✅ CREATE APP FIRST
+const app = express();
+
+// ✅ CORS — BEFORE ROUTES
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://edtech2-lingoquest-6w38.onrender.com",
+      "https://edtech2-lingoquest-01.netlify.app", // ✅ NETLIFY
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
-
-const app = express();
-
 
 // Middleware
 app.use(express.json());
@@ -40,7 +40,7 @@ app.use("/api/content", contentRoutes);
 app.use("/api/tutor", tutorRoutes);
 app.use("/api/lessons", lessonRoutes);
 
-// Health check
+// Health
 app.get("/health", (req, res) => {
   res.json({ status: "OK", message: "API running" });
 });
