@@ -181,7 +181,7 @@ lingoquest/
 
 Design (Figma): https://www.figma.com/design/9yX9CpjtUQVKh09wBiQUNI/Ui-designs?node-id=1-2&t=Fm5Q7kyp26lmZ6GI-1
 
-Project Presentation Slides: [Add link here]
+LiveLink: https://edtech2-lingoquest-mvp.netlify.app
 
 Demo / Pitch Deck: https://youtu.be/0hsqIC9BR5A
 
