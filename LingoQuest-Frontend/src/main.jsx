@@ -9,14 +9,14 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from "./pages/Auth/Login.jsx"
-import Signup from "./pages/Auth/Signup.jsx"
+import Login from "./pages/auth/Login.jsx";
+import Signup from "./pages/auth/Signup.jsx";
 import ForgottenPassword from "./pages/auth/ForgottenPassword";
 
-import ChooseLanguage from "./pages/onboarding/ChooseLanguage";
-import Onboarding1 from "./pages/onboarding/onboarding1";
-import Onboarding2 from "./pages/onboarding/onboarding2";
-import Onboarding3 from "./pages/onboarding/onboarding3";
+import ChooseLanguage from "./Pages/onboarding/ChooseLanguage";
+import Onboarding1 from "./Pages/onboarding/onboarding1";
+import Onboarding2 from "./Pages/onboarding/onboarding2";
+import Onboarding3 from "./Pages/onboarding/onboarding3";
 
 import LingoAIDemo from "./pages/LingoAIDemo";
 
@@ -24,9 +24,9 @@ import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import Dashboard from "./pages/dashboard/dashboard/Dashboard";
-import Lessons from "./pages/dashboard/dashboard/lessons/Lessons";
-import LessonPage from "./pages/dashboard/dashboard/lessons/LessonPage";
-import Quiz from "./pages/dashboard/dashboard/quiz/Quiz";
+import Lessons from "./Pages/Dashboard/Dashboard/lessons/Lessons";
+import LessonPage from "./Pages/Dashboard/Dashboard/lessons/LessonPage";
+import Quiz from "./Pages/Dashboard/Dashboard/quiz/Quiz";
 
 import LingoAIPage from "./pages/dashboard/dashboard/LingoAIPage.jsx";
 
@@ -35,11 +35,10 @@ import Profile from "./pages/dashboard/dashboard/profile/Profile";
 import { AuthProvider } from "./context/AuthContext";
 import { OnboardingProvider } from "./context/OnboardingContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import WelcomeScreen from "./pages/onboarding/WelcomeScreen";
-import TutorDashboard from "./pages/tutors/TutorDashboard";
+import WelcomeScreen from "./Pages/onboarding/WelcomeScreen";
+import TutorDashboard from "./Pages/tutors/TutorDashboard";
 import OTPVerification from "./pages/auth/Otp";
 import CreateNewPassword from "./pages/auth/Newpassword";
-
 
 const queryClient = new QueryClient();
 
@@ -52,8 +51,8 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotpassword" element={<ForgottenPassword />} />
       <Route path="/otp" element={<OTPVerification />} />
-      <Route path='/newpassword' element={<CreateNewPassword />} />
-      <Route path="/onboarding" element={<WelcomeScreen/>} />
+      <Route path="/newpassword" element={<CreateNewPassword />} />
+      <Route path="/onboarding" element={<WelcomeScreen />} />
       <Route path="/language" element={<ChooseLanguage />} />
       <Route path="/onboarding1" element={<Onboarding1 />} />
       <Route path="/onboarding2" element={<Onboarding2 />} />

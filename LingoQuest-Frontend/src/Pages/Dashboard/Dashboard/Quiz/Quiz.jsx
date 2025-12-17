@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getQuizByLesson, submitQuiz } from "../../../../services/contentService";
-import QuizResults from "../Quiz/QuizResults";
+import {
+  getQuizByLesson,
+  submitQuiz,
+} from "../../../../services/contentService";
+import QuizResults from "./QuizResults";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function Quiz() {
@@ -23,16 +26,16 @@ export default function Quiz() {
 
       try {
         const quiz = await getQuizByLesson(lessonId);
-        
+
         if (mounted && quiz) {
           // Transform backend quiz format to frontend format
           const transformedQuiz = quiz.questions.map((q, index) => ({
             id: `q${index}`,
             question: q.questionText,
             options: q.options,
-            answer: q.options[q.correctOptionIndex] // Store the correct answer text
+            answer: q.options[q.correctOptionIndex], // Store the correct answer text
           }));
-          
+
           setQuizData(transformedQuiz);
         }
       } catch (e) {
@@ -44,8 +47,8 @@ export default function Quiz() {
               id: "q1",
               question: "How do you say 'Hello' in French?",
               options: ["Bonjour", "Au revoir", "Merci"],
-              answer: "Bonjour"
-            }
+              answer: "Bonjour",
+            },
           ]);
         }
       }
@@ -56,7 +59,7 @@ export default function Quiz() {
     if (lessonId) {
       loadQuiz();
     }
-    
+
     return () => (mounted = false);
   }, [lessonId]);
 
@@ -85,14 +88,18 @@ export default function Quiz() {
 
     try {
       // Transform answers to backend format
-      const backendAnswers = Object.entries(answers).map(([questionIndex, selectedOption]) => {
-        const question = quizData[parseInt(questionIndex)];
-        const selectedIndex = question.options.findIndex(opt => opt === selectedOption);
-        return {
-          questionIndex: parseInt(questionIndex),
-          selectedOptionIndex: selectedIndex
-        };
-      });
+      const backendAnswers = Object.entries(answers).map(
+        ([questionIndex, selectedOption]) => {
+          const question = quizData[parseInt(questionIndex)];
+          const selectedIndex = question.options.findIndex(
+            (opt) => opt === selectedOption
+          );
+          return {
+            questionIndex: parseInt(questionIndex),
+            selectedOptionIndex: selectedIndex,
+          };
+        }
+      );
 
       const result = await submitQuiz(lessonId, backendAnswers);
       setScore(result);
@@ -105,7 +112,7 @@ export default function Quiz() {
         score: correct / total,
         correctAnswers: correct,
         totalQuestions: total,
-        pointsAwarded: correct * 10
+        pointsAwarded: correct * 10,
       });
     }
   };
@@ -125,7 +132,8 @@ export default function Quiz() {
     return "border-gray-300 bg-white";
   };
 
-  if (showResults) return <QuizResults quizData={quizData} answers={answers} score={score} />;
+  if (showResults)
+    return <QuizResults quizData={quizData} answers={answers} score={score} />;
 
   return (
     <div className="p-8 bg-[#FFF9EB] min-h-screen">
