@@ -19,7 +19,16 @@ connectDB();
 const app = express();
 
 // ✅ HANDLE PREFLIGHT REQUESTS (THIS IS THE MISSING PIECE)
-app.options("*", cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://edtech2-lingoquest-01.netlify.app",
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
 
 // ✅ CORS — BEFORE ROUTES
 app.use(
@@ -58,3 +67,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
