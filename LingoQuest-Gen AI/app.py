@@ -21,7 +21,17 @@ import time
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/api/*": {
+        "origins": [
+            "https://your-netlify-site.netlify.app",  # Your Netlify URL
+            "http://localhost:3000",
+            "http://localhost:5173"
+        ],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
 
 # Store user sessions
 user_sessions = {}
@@ -288,5 +298,15 @@ def cleanup_old_sessions():
     for session_id in expired_sessions:
         del user_sessions[session_id]
 
+@app.errorhandler(404)
+def not_found(e):
+    return jsonify({'error': 'Not found'}), 404
+
+@app.errorhandler(500)
+def server_error(e):
+    return jsonify({'error': 'Internal server error'}), 500
+
+# Update the port settings
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port)
