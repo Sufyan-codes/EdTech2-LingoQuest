@@ -28,8 +28,8 @@ export default function CoursesCard({ courses = [], loading }) {
         ))}
       </div>
 
- <div  className="mt-6 w-full py-3 rounded-full bg-[#2EA148] text-white font-medium text-sm border border-[#F4DFA2] hover:bg-[#FFEABB] transition">
-      <Link to='/lessons'>
+ <div  className="mt-6 w-full py-3 rounded-full bg-[#2EA148] text-white text-center font-medium text-sm border border-[#F4DFA2] hover:bg-[#FFEABB] transition">
+      <Link to='/lessons' class="text-center">
         View All Courses
       </Link>
  </div>
