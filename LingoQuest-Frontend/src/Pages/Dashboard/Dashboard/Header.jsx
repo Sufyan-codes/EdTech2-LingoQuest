@@ -29,7 +29,7 @@ export default function Header() {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img src={logo} alt="LingoQuest" className="h-8" />
+          <img src={logo} alt="LingoQuest" className="h-8 sm:h-6" />
           {userIsTutor && (
             <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">
               Tutor
