@@ -1,5 +1,6 @@
 // src/components/CoursesCard.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CoursesCard({ courses = [], loading }) {
   if (loading) {
@@ -27,9 +28,9 @@ export default function CoursesCard({ courses = [], loading }) {
         ))}
       </div>
 
-      <button className="mt-6 w-full py-3 rounded-full bg-[#2EA148] text-white font-medium text-sm border border-[#F4DFA2] hover:bg-[#FFEABB] transition">
+      <Link to='/lessons' className="mt-6 w-full py-3 rounded-full bg-[#2EA148] text-white font-medium text-sm border border-[#F4DFA2] hover:bg-[#FFEABB] transition">
         View All Courses
-      </button>
+      </Link>
     </div>
   );
 }
