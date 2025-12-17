@@ -12,14 +12,13 @@ export default function MobileNav() {
     { icon: <img src={home} />, label: "Dashboard", to: "/dashboard" },
     { icon: <img src={lesson} />, label: "Lessons", to: "/lessons" },
     { icon: <img src={CheckCircle} />, label: "Quiz", to: "/lessons/:lessonId/quiz" },
-    { icon: <img src={user} />, label: "Profile", to: "/profile" },
-    { icon: <img src={user} />, label: "Tutor Dashboard", to: "/tutor" },
+    { icon: <img src={user} />, label: "Dashboard", to: "/tutor" },
   ];
 
   return (
     <>
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-3">
-        <div className="grid grid-cols-5 gap-2">
+        <div className="grid grid-cols-4 gap-2">
           {navItems.map((item) => (
             <Link
               key={item.label}
